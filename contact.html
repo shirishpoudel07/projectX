@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Pokhara Trade Mall</title>
+    <meta name="description" content="Get in touch with Pokhara Trade Mall. Contact us for inquiries, store information, or assistance. Located in Lakeside, Pokhara.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Enhanced Contact Page Styles */
+        .contact-hero {
+            /* Let .ad-like-hero from styles.css control the background image */
+            background: none;
+            min-height: 80vh;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-hero::before {
+            /* Remove grid overlay so the background image is clearly visible */
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: none;
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+            padding: 8rem 0 4rem;
+        }
+        
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, #fff, #f0f9ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: titleSlideIn 1s ease-out;
+        }
+        
+        .hero-content p {
+            font-size: 1.05rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+        
+        .contact-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+        
+        .contact-stat {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease-out calc(0.6s + var(--delay, 0s)) both;
+        }
+        
+        .contact-stat:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .contact-stat i {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--color-yellow);
+        }
+        
+        .contact-stat h4 {
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .contact-stat p {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            margin: 0;
+        }
+        
+        .quick-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 0.9s both;
+        }
+        
+        .quick-action-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .quick-action-btn:hover {
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .quick-action-btn i {
+            font-size: 1.1rem;
+        }
+        
+        /* Enhanced Contact Section */
+        .contact-section {
+            padding: 6rem 0;
+            background: linear-gradient(to bottom, #f8fafc 0%, #fff 100%);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr; /* wider info/map, compact form */
+            gap: 2rem;
+            align-items: start;
+        }
+        /* Quick form as a slim sidebar card */
+        .quick-form-card {
+            background: white;
+            border-radius: 16px;
+            padding: 1.25rem 1.25rem 1rem;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            border: 1px solid rgba(0,0,0,0.06);
+            display: block;
+            width: 100%;
+        }
+        .quick-form-card .form-header { margin-bottom: 0.75rem; }
+        .quick-form-card .form-header h3 { margin-bottom: 0.25rem; font-size: 1.2rem; }
+        .quick-form-card .form-box input, .quick-form-card .form-box textarea { height: 52px; padding: 0.9rem 1rem; }
+        .quick-form-card .form-box textarea { min-height: 120px; }
+        .quick-form-card .submit-btn { width: 100%; padding: 0.9rem 1.2rem; }
+        .quick-form-card .submit-btn {
+            background: var(--color-secondary);
+            border: none;
+        }
+        .quick-form-card .submit-btn:hover { background: #b91c1c; }
+        
+        .contact-info {
+            position: sticky;
+            top: 2rem;
+        }
+        
+        .contact-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+        }
+        
+        .contact-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--color-darkblue);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .contact-card h3 i {
+            font-size: 1.2rem;
+            color: var(--color-orange);
+        }
+        
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .contact-detail:last-child {
+            border-bottom: none;
+        }
+        
+        .contact-detail:hover {
+            background: rgba(255, 107, 53, 0.05);
+            border-radius: 10px;
+            margin: 0 -1rem;
+            padding: 1rem 1rem;
+        }
+        
+        .contact-detail i {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 107, 53, 0.1);
+            color: var(--color-orange);
+            border-radius: 50%;
+            font-size: 1rem;
+        }
+        
+        .contact-detail-content {
+            flex: 1;
+        }
+        
+        .contact-detail-content h5 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--color-darkblue);
+            margin-bottom: 0.25rem;
+        }
+        
+        .contact-detail-content p {
+            font-size: 0.9rem;
+            color: #666;
+            margin: 0;
+        }
+        
+        .contact-detail-content a {
+            color: var(--color-orange);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-detail-content a:hover {
+            color: var(--color-darkblue);
+        }
+        
+        .map-container {
+            border-radius: 15px;
+            overflow: hidden;
+            height: 300px;
+            position: relative;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Enhanced Form */
+        .contact-form-container {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .form-header h3 {
+            font-size: 1.4rem;
+            color: var(--color-darkblue);
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-header p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        
+        .form-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+        /* Boxed, single-column form look */
+        .form-box .form-row { grid-template-columns: 1fr; gap: 1rem; }
+        .form-box .form-group label { 
+            position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+        }
+        .form-box input,
+        .form-box textarea,
+        .form-box select {
+            width: 100%;
+            padding: 1.1rem 1.25rem;
+            height: 58px;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            background: #fff;
+            font-size: 1rem;
+        }
+        .form-box textarea { min-height: 180px; height: auto; }
+        .form-box ::placeholder { color: #6b7280; opacity: 1; }
+        .form-box .char-counter { text-align: left; }
+        /* Hide fields we don't need for the simplified box view */
+        .form-box label[for="lastName"],
+        .form-box #lastName,
+        .form-box label[for="subject"],
+        .form-box #subject { display: none; }
+        /* Button style similar to screenshot */
+        .form-box .submit-btn {
+            background: #d9c98a;
+            color: #ffffff;
+            border-radius: 40px;
+            padding: 1rem 2rem;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+            width: auto;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        
+        .form-group {
+            position: relative;
+        }
+        
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: var(--color-darkblue);
+            margin-bottom: 0.45rem;
+            font-size: 0.85rem;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            border: 2px solid rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            background: #f8fafc;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--color-orange);
+            background: white;
+            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .form-group .required {
+            color: var(--color-orange);
+        }
+        
+        .char-counter {
+            text-align: right;
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 0.25rem;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, var(--color-orange), #e55039);
+            color: white;
+            border: none;
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            margin-top: 0.75rem;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+        }
+        
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+        
+        .submit-btn.loading {
+            pointer-events: none;
+        }
+        
+        .btn-loader {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-top: 2px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            opacity: 0;
+        }
+        
+        .submit-btn.loading .btn-loader {
+            opacity: 1;
+        }
+        
+        .submit-btn.loading .btn-label {
+            opacity: 0;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            padding: 6rem 0;
+            background: white;
+        }
+        
+        .faq-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .faq-header h2 {
+            font-size: 1.8rem;
+            color: var(--color-darkblue);
+            margin-bottom: 1rem;
+        }
+        
+        .faq-header p {
+            font-size: 0.95rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: white;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .faq-question {
+            padding: 1.1rem 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: none;
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--color-darkblue);
+        }
+        
+        .faq-question i {
+            transition: transform 0.3s ease;
+            color: var(--color-orange);
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(45deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+        }
+        
+        .faq-answer-content {
+            padding: 0 2rem 1.5rem;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* Animations */
+        @keyframes titleSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes spin {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transform: translateX(400px);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+        }
+        
+        .toast.show {
+            transform: translateX(0);
+        }
+        
+        .toast i {
+            font-size: 1.2rem;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            /* Make hero section shorter on mobile for usability */
+            .contact-hero {
+                min-height: 55vh;
+            }
+            .hero-content {
+                padding: 5rem 0 2rem;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .contact-info {
+                position: static;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .contact-stats {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .quick-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .quick-action-btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+            
+            .contact-card,
+            .contact-form-container {
+                padding: 1.5rem;
+            }
+            
+            .toast {
+                right: 1rem;
+                left: 1rem;
+                transform: translateY(-100px);
+            }
+            
+            .toast.show {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="logo.jpg" alt="Pokhara Trade Mall Logo" class="logo-img">
+                <span class="company-name"></span>
+            </a>
+            <input type="checkbox" id="hamburger-toggle" class="hamburger-toggle" aria-label="Toggle navigation">
+            <label for="hamburger-toggle" class="hamburger" aria-controls="navLinks" aria-expanded="false" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-link ">Home</a></li>
+                <li><a href="stores.html" class="nav-link ">Stores</a></li>
+                <li><a href="cinema.html" class="nav-link">Cinema</a></li>
+                <li><a href="entertainment.html" class="nav-link">Entertainment</a></li>
+                <li><a href="advertisement.html" class="nav-link">Advertisement</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <div class="ad-hero ad-like-hero" style="background-image: linear-gradient(135deg, rgba(63,79,159,0.85) 0%, rgba(196,30,58,0.85) 100%), url('layout.jpg'); min-height: 32vh; padding: 2.5rem 0 1.5rem;">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Get In Touch</h1>
+                    <p>We're here to help you with any questions, concerns, or feedback about Pokhara Trade Mall.</p>
+                    
+                    <!-- Contact Stats -->
+                    <div class="contact-stats">
+                        <div class="contact-stat" style="--delay: 0s">
+                            <i class="fas fa-clock"></i>
+                            <h4>24/7 Support</h4>
+                            <p>Always here when you need us</p>
+                        </div>
+                        <div class="contact-stat" style="--delay: 0.1s">
+                            <i class="fas fa-reply"></i>
+                            <h4>Quick Response</h4>
+                            <p>Reply within 2 hours</p>
+                        </div>
+                        <div class="contact-stat" style="--delay: 0.2s">
+                            <i class="fas fa-users"></i>
+                            <h4>Expert Team</h4>
+                            <p>Dedicated customer service</p>
+                        </div>
+                        <div class="contact-stat" style="--delay: 0.3s">
+                            <i class="fas fa-heart"></i>
+                            <h4>100% Satisfaction</h4>
+                            <p>Your happiness is our priority</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Hero Buttons (match advertisement style) -->
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn-primary-ad" aria-label="Open contact form">
+                            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                            <span>Contact Us</span>
+                        </a>
+                        <a href="#feedback" class="btn-secondary-ad" aria-label="Open feedback form">
+                            <i class="fas fa-comment-dots" aria-hidden="true"></i>
+                            <span>Give Feedback</span>
+                        </a>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Pokhara%20Trade%20Mall%2C%20Pokhara%2C%20Nepal" target="_blank" class="btn-secondary-ad" aria-label="Get directions to Pokhara Trade Mall">
+                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                            <span>Directions</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+            <div class="container">
+                <div class="contact-grid">
+                    <!-- Contact Information -->
+                    <div class="contact-info">
+                        <!-- Contact Details -->
+                        <div class="contact-card">
+                            <h3><i class="fas fa-info-circle"></i> Contact Information</h3>
+                            <div class="contact-detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div class="contact-detail-content">
+                                    <h5>Address</h5>
+                                    <p>Lakeside, Pokhara-6, Kaski, Nepal</p>
+                                </div>
+                            </div>
+                            <div class="contact-detail">
+                                <i class="fas fa-phone"></i>
+                                <div class="contact-detail-content">
+                                    <h5>Phone</h5>
+                                    <p><a href="tel:+97761123456">+977 61 123456</a></p>
+                                </div>
+                            </div>
+                            <div class="contact-detail">
+                                <i class="fas fa-envelope"></i>
+                                <div class="contact-detail-content">
+                                    <h5>Email</h5>
+                                    <p><a href="mailto:info@pokharatrade.com">info@pokharatrade.com</a></p>
+                                </div>
+                            </div>
+                            <div class="contact-detail">
+                                <i class="fas fa-clock"></i>
+                                <div class="contact-detail-content">
+                                    <h5>Operating Hours</h5>
+                                    <p>Sunday - Friday: 10:00 AM - 10:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Map -->
+                        <div class="contact-card">
+                            <h3><i class="fas fa-map"></i> Find Our Location</h3>
+                            <div class="map-container">
+                                <iframe 
+                                    title="Pokhara Trade Mall Location" 
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3515.4557473983846!2d83.98388827527336!3d28.223843675890496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3995944fb89374ab%3A0xbc4f07fc22ffa249!2sPokhara%20Trade%20Mall!5e0!3m2!1sen!2sus!4v1755688585993!5m2!1sen!2sus%22"
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+
+                    <!-- Quick Contact (sidebar) -->
+                    <aside class="quick-form-card" aria-label="Quick contact form">
+                        <div class="form-header" style="margin-bottom: 0.5rem;">
+                            <h3>Quick Contact</h3>
+                            <p style="font-size:0.9rem;color:#666">Send us your feedback or inquiry.</p>
+                        </div>
+                        <form id="quickContactForm" class="form-grid form-box" novalidate style="display:block;">
+                            <div class="form-group">
+                                <label for="qcName">Name <span class="required">*</span></label>
+                                <input type="text" id="qcName" name="qcName" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="qcEmail">Email <span class="required">*</span></label>
+                                <input type="email" id="qcEmail" name="qcEmail" placeholder="Your Email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="qcMessage">Feedback <span class="required">*</span></label>
+                                <textarea id="qcMessage" name="qcMessage" placeholder="Write your feedback..." rows="4" required maxlength="500"></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn" aria-label="Send feedback">
+                                <span class="btn-label">Send</span>
+                                <span class="btn-loader"></span>
+                            </button>
+                        </form>
+                    </aside>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Feedback Section -->
+        <section class="contact-section" id="feedback">
+            <div class="container">
+                <div class="contact-form-container">
+                    <div class="form-header">
+                        <h3>Share Your Feedback</h3>
+                        <p>Your feedback helps us improve our services and your experience at our mall.</p>
+                    </div>
+                    
+                    <form id="feedbackForm" class="form-grid form-box" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fbName">Full Name <span class="required">*</span></label>
+                                <input type="text" id="fbName" name="fbName" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="fbEmail">Email Address <span class="required">*</span></label>
+                                <input type="email" id="fbEmail" name="fbEmail" placeholder="Your Email" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="fbAddress">Address</label>
+                            <input type="text" id="fbAddress" name="fbAddress" placeholder="address">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fbType">Feedback Type <span class="required">*</span></label>
+                                <select id="fbType" name="fbType" required>
+                                    <option value="">Choose a type</option>
+                                    <option value="service">Service Experience</option>
+                                    <option value="store">Store/Brand</option>
+                                    <option value="facility">Facilities & Cleanliness</option>
+                                    <option value="website">Website/App</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="fbRating">Rating <span class="required">*</span></label>
+                                <select id="fbRating" name="fbRating" required>
+                                    <option value="">Select rating</option>
+                                    <option value="5">★★★★★ Excellent</option>
+                                    <option value="4">★★★★☆ Very Good</option>
+                                    <option value="3">★★★☆☆ Good</option>
+                                    <option value="2">★★☆☆☆ Fair</option>
+                                    <option value="1">★☆☆☆☆ Poor</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fbMessage">Your Feedback <span class="required">*</span></label>
+                            <textarea id="fbMessage" name="fbMessage" placeholder="Message" rows="6" required maxlength="500" oninput="updateFeedbackCharCount()"></textarea>
+                            <div class="char-counter">
+                                <span id="fbCharCount">0</span>/500 characters
+                            </div>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <span class="btn-label">Submit Feedback</span>
+                            <span class="btn-loader"></span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <div class="faq-header">
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Find quick answers to common questions about Pokhara Trade Mall</p>
+                </div>
+                
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            What are the mall's operating hours?
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Pokhara Trade Mall is open Sunday through Friday from 10:00 AM to 10:00 PM. Some individual stores and the food court may have extended hours. The cinema operates according to show timings.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Is there parking available at the mall?
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Yes, we offer ample parking space for both cars and motorcycles. Parking is free for the first 3 hours, and nominal charges apply for extended parking.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            How can I book cinema tickets?
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                You can book QFX Cinema tickets online through our website, at the cinema counter, or by calling our booking hotline. Online booking offers the convenience of seat selection and advance booking.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Are there dining options available in the mall?
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Yes, our food court features a variety of dining options including traditional Nepali cuisine, international dishes, fast food, and beverages. We also have specialty restaurants throughout the mall.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            How do I inquire about advertising opportunities?
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                For advertising opportunities, please visit our Advertisement page or contact our marketing team directly. We offer various advertising options including digital displays, booth spaces, and promotional events.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Is the mall accessible for people with disabilities?
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Yes, Pokhara Trade Mall is fully accessible with elevators, ramps, accessible restrooms, and designated parking spaces for people with disabilities. We are committed to providing an inclusive shopping experience for all visitors.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h4>About Pokhara Trade Mall</h4>
+                    <p>Nepal's premier shopping destination offering world-class retail, dining, and entertainment experiences in the heart of Pokhara.</p>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Lakeside, Pokhara, Nepal</p>
+                        <p><i class="fas fa-phone"></i> +977 61 123456</p>
+                        <p><i class="fas fa-envelope"></i> info@pokharatrade.com</p>
+                    </div>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="stores.html">Stores</a></li>
+                        <li><a href="cinema.html">Cinema</a></li>
+                        <li><a href="entertainment.html">Entertainment</a></li>
+                        <li><a href="advertisement.html">Advertisement</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section hours">
+                    <h4>Opening Hours</h4>
+                    <ul class="hours-list">
+                        <li><span>Monday - Friday:</span> 10:00 AM - 10:00 PM</li>
+                        <li><span>Saturday:</span> 10:00 AM - 11:00 PM</li>
+                        <li><span>Sunday:</span> 11:00 AM - 9:00 PM</li>
+                        <li><span>Food Court:</span> 10:00 AM - 11:00 PM</li>
+                        <li><span>QFX Cinema:</span> According to show timings</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Pokhara Trade Mall. All rights reserved. | Designed with <i class="fas fa-heart"></i> by Shirish</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Toast -->
+    <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true" hidden>
+        <i class="fas fa-check-circle"></i>
+        <div class="toast-message">Thank you! Your message has been sent. We'll get back to you soon.</div>
+    </div>
+
+    <script>
+        // Character counter for message field
+        function updateCharCount() {
+            const message = document.getElementById('message');
+            const charCount = document.getElementById('charCount');
+            if (message && charCount) {
+                const count = message.value.length;
+                charCount.textContent = count;
+                
+                // Add visual indicator when approaching limit
+                if (count > 900) {
+                    charCount.style.color = '#e55039';
+                } else {
+                    charCount.style.color = '#666';
+                }
+            }
+        }
+        
+        // Show toast notification
+        function showToast(text, type = 'success') {
+            const toast = document.getElementById('toast');
+            if (!toast) return;
+            
+            // Set toast style based on type
+            if (type === 'error') {
+                toast.style.background = 'linear-gradient(135deg, #e55039, #c23616)';
+                toast.querySelector('i').className = 'fas fa-exclamation-circle';
+            } else {
+                toast.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+                toast.querySelector('i').className = 'fas fa-check-circle';
+            }
+            
+            const msgEl = toast.querySelector('.toast-message');
+            if (msgEl && text) msgEl.textContent = text;
+            
+            toast.hidden = false;
+            toast.classList.add('show');
+            
+            // Auto-hide toast after delay
+            setTimeout(() => { 
+                toast.classList.remove('show'); 
+                setTimeout(() => {
+                    toast.hidden = true;
+                }, 300);
+            }, 4000);
+        }
+        
+        // Toggle loading state on button
+        function setButtonLoading(btn, isLoading) {
+            if (!btn) return;
+            
+            btn.classList.toggle('loading', isLoading);
+            btn.disabled = isLoading;
+            
+            // Add subtle animation when loading starts
+            if (isLoading) {
+                btn.style.transform = 'scale(0.98)';
+            } else {
+                btn.style.transform = '';
+            }
+        }
+        
+        // Validate form fields
+        function validateContactForm(form) {
+            const requiredFields = ['firstName', 'lastName', 'email', 'subject', 'message'];
+            let valid = true;
+            let firstInvalidField = null;
+            
+            // Validate required fields
+            requiredFields.forEach(id => {
+                const field = form.querySelector('#' + id);
+                if (!field) return;
+                
+                const isValid = field.value.trim() !== '';
+                field.classList.toggle('invalid', !isValid);
+                
+                if (!isValid) {
+                    valid = false;
+                    if (!firstInvalidField) firstInvalidField = field;
+                }
+                
+                // Add field validation feedback
+                field.addEventListener('input', function() {
+                    this.classList.toggle('invalid', this.value.trim() === '');
+                });
+            });
+            
+            // Validate email format
+            const emailField = form.querySelector('#email');
+            if (emailField && emailField.value.trim()) {
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                const isValidEmail = emailPattern.test(emailField.value.trim());
+                
+                if (!isValidEmail) {
+                    emailField.classList.add('invalid');
+                    valid = false;
+                    if (!firstInvalidField) firstInvalidField = emailField;
+                }
+            }
+            
+            // Focus the first invalid field
+            if (firstInvalidField) {
+                firstInvalidField.focus();
+            }
+            
+            return valid;
+        }
+        
+        // Handle form submission
+        function handleContactFormSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            
+            if (!validateContactForm(form)) {
+                showToast('Please fill in all required fields correctly.', 'error');
+                return false;
+            }
+            
+            // Show loading state
+            setButtonLoading(submitBtn, true);
+            
+            // Simulate form submission (would be replaced with actual AJAX call)
+            setTimeout(() => {
+                const firstName = form.querySelector('#firstName').value;
+                showToast(`Thank you, ${firstName}! Your message has been sent successfully. We'll get back to you soon.`);
+                
+                // Reset form
+                form.reset();
+                updateCharCount();
+                
+                // Remove loading state
+                setButtonLoading(submitBtn, false);
+                
+                // Smooth scroll to top of contact section
+                document.querySelector('.contact-section').scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start' 
+                });
+            }, 1500);
+            
+            return false;
+        }
+        
+        // Initialize form
+        function initContactForm() {
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', handleContactFormSubmit);
+                updateCharCount(); // Initialize character counter
+                
+                // Add input animations
+                const formInputs = contactForm.querySelectorAll('input, textarea, select');
+                formInputs.forEach(input => {
+                    // Add focus effects
+                    input.addEventListener('focus', function() {
+                        this.parentElement.classList.add('focused');
+                    });
+                    
+                    input.addEventListener('blur', function() {
+                        this.parentElement.classList.remove('focused');
+                    });
+                });
+            }
+        }
+
+        // Quick contact form handlers
+        function validateQuickContactForm(form) {
+            const requiredFields = ['qcName', 'qcEmail', 'qcMessage'];
+            let valid = true;
+            let firstInvalid = null;
+            requiredFields.forEach(id => {
+                const el = form.querySelector('#' + id);
+                if (!el) return;
+                const ok = el.value.trim() !== '';
+                el.classList.toggle('invalid', !ok);
+                if (!ok && !firstInvalid) firstInvalid = el;
+                el.addEventListener('input', function(){
+                    this.classList.toggle('invalid', this.value.trim() === '');
+                });
+            });
+            const emailEl = form.querySelector('#qcEmail');
+            if (emailEl && emailEl.value.trim()) {
+                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!re.test(emailEl.value.trim())) {
+                    emailEl.classList.add('invalid');
+                    valid = false;
+                    if (!firstInvalid) firstInvalid = emailEl;
+                }
+            }
+            if (firstInvalid) firstInvalid.focus();
+            return valid;
+        }
+
+        function handleQuickContactSubmit(e) {
+            e.preventDefault();
+            const form = e.target;
+            const btn = form.querySelector('button[type="submit"]');
+            if (!validateQuickContactForm(form)) {
+                showToast('Please fill your name, a valid email and message.', 'error');
+                return false;
+            }
+            setButtonLoading(btn, true);
+            setTimeout(() => {
+                const name = form.querySelector('#qcName').value.trim();
+                showToast(`Thank you, ${name}! Your message has been sent.`);
+                form.reset();
+                setButtonLoading(btn, false);
+                document.querySelector('#quick-contact').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 1200);
+            return false;
+        }
+        
+        // Feedback char counter
+        function updateFeedbackCharCount() {
+            const message = document.getElementById('fbMessage');
+            const charCount = document.getElementById('fbCharCount');
+            if (message && charCount) {
+                const count = message.value.length;
+                charCount.textContent = count;
+                charCount.style.color = count > 450 ? '#e55039' : '#666';
+            }
+        }
+
+        // Validate feedback form fields
+        function validateFeedbackForm(form) {
+            const requiredFields = ['fbName', 'fbEmail', 'fbType', 'fbRating', 'fbMessage'];
+            let valid = true;
+            let firstInvalidField = null;
+
+            requiredFields.forEach(id => {
+                const field = form.querySelector('#' + id);
+                if (!field) return;
+                const isValid = field.value.trim() !== '';
+                field.classList.toggle('invalid', !isValid);
+                if (!isValid && !firstInvalidField) firstInvalidField = field;
+                field.addEventListener('input', function() {
+                    this.classList.toggle('invalid', this.value.trim() === '');
+                });
+            });
+
+            const emailField = form.querySelector('#fbEmail');
+            if (emailField && emailField.value.trim()) {
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(emailField.value.trim())) {
+                    emailField.classList.add('invalid');
+                    valid = false;
+                    if (!firstInvalidField) firstInvalidField = emailField;
+                }
+            }
+
+            if (firstInvalidField) firstInvalidField.focus();
+            return valid;
+        }
+
+        // Handle feedback form submission
+        function handleFeedbackFormSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            const submitBtn = form.querySelector('button[type="submit"]');
+
+            if (!validateFeedbackForm(form)) {
+                showToast('Please complete all required feedback fields correctly.', 'error');
+                return false;
+            }
+
+            setButtonLoading(submitBtn, true);
+            setTimeout(() => {
+                const name = form.querySelector('#fbName').value.trim();
+                showToast(`Thanks, ${name}! Your feedback has been submitted.`);
+                form.reset();
+                updateFeedbackCharCount();
+                setButtonLoading(submitBtn, false);
+                document.querySelector('#feedback').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 1200);
+
+            return false;
+        }
+
+        // Handle FAQ section
+        function initFaqSection() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            if (!faqItems.length) return;
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+                
+                if (question && answer) {
+                    // Set initial state
+                    answer.style.maxHeight = '0px';
+                    
+                    // Add click handler
+                    question.addEventListener('click', () => {
+                        // Toggle active class
+                        const isActive = item.classList.toggle('active');
+                        
+                        // Toggle answer visibility with smooth animation
+                        if (isActive) {
+                            answer.style.maxHeight = answer.scrollHeight + 'px';
+                        } else {
+                            answer.style.maxHeight = '0px';
+                        }
+                        
+                        // Close other open FAQs (accordion behavior)
+                        faqItems.forEach(otherItem => {
+                            if (otherItem !== item && otherItem.classList.contains('active')) {
+                                otherItem.classList.remove('active');
+                                otherItem.querySelector('.faq-answer').style.maxHeight = '0px';
+                            }
+                        });
+                    });
+                }
+            });
+            
+            // Open first FAQ by default (optional)
+            // if (faqItems.length > 0) {
+            //     faqItems[0].classList.add('active');
+            //     faqItems[0].querySelector('.faq-answer').style.maxHeight = 
+            //         faqItems[0].querySelector('.faq-answer').scrollHeight + 'px';
+            // }
+        }
+        
+        // Responsive Hamburger Menu Script
+        function initMobileNavigation() {
+            const hamburgerToggle = document.getElementById('hamburger-toggle');
+            const navLinks = document.getElementById('navLinks');
+            
+            if (hamburgerToggle && navLinks) {
+                hamburgerToggle.addEventListener('change', function() {
+                    navLinks.classList.toggle('nav-open', this.checked);
+                    document.body.style.overflow = this.checked ? 'hidden' : '';
+                });
+                
+                navLinks.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        hamburgerToggle.checked = false;
+                        navLinks.classList.remove('nav-open');
+                        document.body.style.overflow = '';
+                    });
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (hamburgerToggle.checked && 
+                        !navLinks.contains(e.target) && 
+                        !hamburgerToggle.contains(e.target)) {
+                        hamburgerToggle.checked = false;
+                        navLinks.classList.remove('nav-open');
+                        document.body.style.overflow = '';
+                    }
+                });
+                
+                // Close menu on escape key
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && hamburgerToggle.checked) {
+                        hamburgerToggle.checked = false;
+                        navLinks.classList.remove('nav-open');
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
+        }
+        
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            initContactForm();
+            // Initialize feedback form
+            const feedbackForm = document.getElementById('feedbackForm');
+            if (feedbackForm) {
+                feedbackForm.addEventListener('submit', handleFeedbackFormSubmit);
+                updateFeedbackCharCount();
+            }
+            // Init quick contact
+            const quickForm = document.getElementById('quickContactForm');
+            if (quickForm) {
+                quickForm.addEventListener('submit', handleQuickContactSubmit);
+            }
+            initFaqSection();
+            initMobileNavigation();
+            
+            // Add scroll animation for quick action buttons
+            const scrollLinks = document.querySelectorAll('a[href^="#"]');
+            scrollLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const targetId = link.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        e.preventDefault();
+                        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+            
+            // Add animation to stats on scroll
+            const contactStats = document.querySelectorAll('.contact-stat');
+            if (contactStats.length) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                    });
+                }, { threshold: 0.2 });
+                
+                contactStats.forEach(stat => {
+                    stat.style.opacity = '0';
+                    stat.style.transform = 'translateY(20px)';
+                    observer.observe(stat);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

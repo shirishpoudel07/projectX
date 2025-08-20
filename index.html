@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokhara Trade Mall - Premier Shopping Destination</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head> 
+<body>
+
+     <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="logo.jpg" alt="Pokhara Trade Mall Logo" class="logo-img">
+                <span class="company-name"></span>
+            </a>
+            <input type="checkbox" id="hamburger-toggle" class="hamburger-toggle" aria-label="Toggle navigation">
+            <label for="hamburger-toggle" class="hamburger" aria-controls="navLinks" aria-expanded="false" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="stores.html" class="nav-link">Stores</a></li>
+                <li><a href="cinema.html" class="nav-link">Cinema</a></li>
+                <li><a href="entertainment.html" class="nav-link">Entertainment</a></li>
+                <li><a href="advertisement.html" class="nav-link">Advertisement</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+       
+    <main>
+        
+        <section class="hero-section ad-like-hero cover-hero">
+            <div class="hero-container container">
+                <div class="hero-text">
+                    <h1 class="hero-title">Pokhara Trade Mall</h1>
+                    <p class="hero-subtitle">Premium shopping, dining and entertainment in the heart of Pokhara.</p>
+                    <div class="hero-ctas">
+                        <a href="stores.html" class="btn-primary-ad" aria-label="Explore our stores and shopping options">
+                            <i class="fas fa-store" aria-hidden="true"></i>
+                            <span>Explore Stores</span>
+                        </a>
+                        <a href="cinema.html" class="btn-secondary-ad" aria-label="Visit QFX Cinema">
+                            <i class="fas fa-film" aria-hidden="true"></i>
+                            <span>Visit QFX Cinema</span>
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">5,000+</div>
+                            <div class="stat-label">Daily Visitors</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">70+</div>
+                            <div class="stat-label">Premium Brands</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">200+</div>
+                            <div class="stat-label">Retail Shops</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-media">
+                    <img src="layout.jpg" alt="Mall Overview" class="hero-image-card">
+                </div>
+            </div>
+        </section>
+
+        <!-- Manual Carousel Section -->
+        <section class="carousel-section home-carousel">
+            <div class="carousel-container">
+                <div class="carousel-wrapper">
+                    <div class="carousel-slides">
+                        <div class="carousel-slide">
+                            <img src="1.jpg" alt="Mall Interior View" class="carousel-image">
+                            <div class="carousel-content">
+                                <h3>Modern Shopping Experience</h3>
+                                <p>Discover a world-class shopping destination with premium stores and exceptional service.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="1000001886.jpg" alt="Electronics Store" class="carousel-image">
+                            <div class="carousel-content">
+                                <h3>Latest Electronics</h3>
+                                <p>Find cutting-edge technology and gadgets from top brands at competitive prices.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="layout.jpg" alt="Mall Layout" class="carousel-image">
+                            <div class="carousel-content">
+                                <h3>Strategic Location</h3>
+                                <p>Conveniently located in the heart of Pokhara with easy access and ample parking.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="logo.jpg" alt="Trade Mall Logo" class="carousel-image">
+                            <div class="carousel-content">
+                                <h3>Premium Brands</h3>
+                                <p>Home to international and local brands offering quality products and services.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="1.jpg" alt="Fashion Store" class="carousel-image">
+                            <div class="carousel-content">
+                                <h3>Fashion & Style</h3>
+                                <p>Explore the latest fashion trends and styles from renowned fashion retailers.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="1000001886.jpg" alt="Food Court" class="carousel-image">
+                            <div class="carousel-content">
+                                <h3>Dining Excellence</h3>
+                                <p>Enjoy diverse culinary experiences at our extensive food court and restaurants.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Navigation Arrows -->
+                    <button class="carousel-nav carousel-prev" aria-label="Previous slide">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-nav carousel-next" aria-label="Next slide">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    
+                    <!-- Slide Indicators -->
+                    <div class="carousel-indicators">
+                        <button class="carousel-indicator active" data-slide="0"></button>
+                        <button class="carousel-indicator" data-slide="1"></button>
+                        <button class="carousel-indicator" data-slide="2"></button>
+                        <button class="carousel-indicator" data-slide="3"></button>
+                        <button class="carousel-indicator" data-slide="4"></button>
+                        <button class="carousel-indicator" data-slide="5"></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="nav-info-section compact-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>What We Offer</h2>
+                    <p>Discover everything available at Pokhara Trade Mall</p>
+                </div>
+                
+                <div class="nav-info-grid">
+                    <div class="nav-info-card">
+                        <div class="nav-info-icon">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <h3>Shopping Stores</h3>
+                        <p>Browse through over 70 premium brands including fashion, electronics, beauty products, and more. Find everything you need from local and international brands.</p>
+                        <a href="stores.html" class="btn btn-primary">View All Stores</a>
+                    </div>
+
+                    <div class="nav-info-card">
+                        <div class="nav-info-icon qfx-icon">
+                            <i class="fas fa-film"></i>
+                        </div>
+                        <h3>QFX Cinema</h3>
+                        <p>Enjoy the latest movies in our state-of-the-art QFX cinema with comfortable seating, crystal clear sound, and the best movie experience in Pokhara.</p>
+                        <a href="cinema.html" class="btn btn-primary">Visit Cinema</a>
+                    </div>
+
+                    <div class="nav-info-card">
+                        <div class="nav-info-icon">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <h3>Entertainment</h3>
+                        <p>Have fun with family and friends at our entertainment zones including gaming areas, virtual reality experiences, mirror maze, and food court.</p>
+                        <a href="entertainment.html" class="btn btn-primary">Explore Fun</a>
+                    </div>
+
+                    <div class="nav-info-card">
+                        <div class="nav-info-icon">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                        <h3>Advertisement</h3>
+                        <p>Promote your business with us! We offer various advertising opportunities including digital screens, banners, and promotional spaces throughout the mall.</p>
+                        <a href="advertisement.html" class="btn btn-primary">Advertise Here</a>
+                    </div>
+
+                    <div class="nav-info-card">
+                        <div class="nav-info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3>Contact Us</h3>
+                        <p>Get in touch with us for any questions, assistance, or information. Our friendly staff is here to help you have the best experience at our mall.</p>
+                        <a href="contact.html" class="btn btn-primary">Contact Now</a>
+                    </div>
+
+                    <div class="nav-info-card">
+                        <div class="nav-info-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h3>Food & Dining</h3>
+                        <p>Enjoy delicious meals at our food court with indoor and outdoor seating. We serve everything from local Nepali cuisine to international dishes.</p>
+                        <a href="entertainment.html" class="btn btn-primary">See Food Options</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h4>About Pokhara Trade Mall</h4>
+                    <p>Nepal's premier shopping destination offering world-class retail, dining, and entertainment experiences in the heart of Pokhara.</p>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Lakeside, Pokhara, Nepal</p>
+                        <p><i class="fas fa-phone"></i> +977 61 123456</p>
+                        <p><i class="fas fa-envelope"></i> info@pokharatrade.com</p>
+                    </div>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="stores.html">Stores</a></li>
+                        <li><a href="cinema.html">Cinema</a></li>
+                        <li><a href="entertainment.html">Entertainment</a></li>
+                        <li><a href="advertisement.html">Advertisement</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section hours">
+                    <h4>Opening Hours</h4>
+                    <ul class="hours-list">
+                        <li><span>Monday - Friday:</span> 10:00 AM - 10:00 PM</li>
+                        <li><span>Saturday:</span> 10:00 AM - 11:00 PM</li>
+                        <li><span>Sunday:</span> 11:00 AM - 9:00 PM</li>
+                        <li><span>Food Court:</span> 10:00 AM - 11:00 PM</li>
+                        <li><span>QFX Cinema:</span> According to show timings</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Pokhara Trade Mall. All rights reserved. | Designed with <i class="fas fa-heart"></i> by Shirish</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <!-- Manual Carousel JavaScript -->
+    <script>
+        class ManualCarousel {
+            constructor() {
+                this.currentSlide = 0;
+                this.totalSlides = 6;
+                this.isAnimating = false;
+                this.touchStartX = 0;
+                this.touchEndX = 0;
+                this.init();
+            }
+
+            init() {
+                this.slidesContainer = document.querySelector('.carousel-slides');
+                this.prevBtn = document.querySelector('.carousel-prev');
+                this.nextBtn = document.querySelector('.carousel-next');
+                this.indicators = document.querySelectorAll('.carousel-indicator');
+
+                if (!this.slidesContainer) return;
+
+                this.bindEvents();
+                this.updateSlidePosition();
+            }
+
+            bindEvents() {
+                // Arrow navigation
+                if (this.prevBtn) {
+                    this.prevBtn.addEventListener('click', () => this.prevSlide());
+                }
+                
+                if (this.nextBtn) {
+                    this.nextBtn.addEventListener('click', () => this.nextSlide());
+                }
+
+                // Indicator navigation
+                this.indicators.forEach((indicator, index) => {
+                    indicator.addEventListener('click', () => this.goToSlide(index));
+                });
+
+                // Touch/swipe support for mobile
+                this.slidesContainer.addEventListener('touchstart', (e) => {
+                    this.touchStartX = e.changedTouches[0].screenX;
+                });
+
+                this.slidesContainer.addEventListener('touchend', (e) => {
+                    this.touchEndX = e.changedTouches[0].screenX;
+                    this.handleSwipe();
+                });
+
+                // Keyboard navigation
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowLeft') {
+                        this.prevSlide();
+                    } else if (e.key === 'ArrowRight') {
+                        this.nextSlide();
+                    }
+                });
+            }
+
+            handleSwipe() {
+                const swipeThreshold = 50;
+                const diff = this.touchStartX - this.touchEndX;
+
+                if (Math.abs(diff) > swipeThreshold) {
+                    if (diff > 0) {
+                        this.nextSlide(); // Swipe left - next slide
+                    } else {
+                        this.prevSlide(); // Swipe right - previous slide
+                    }
+                }
+            }
+
+            updateSlidePosition() {
+                if (!this.slidesContainer) return;
+                
+                const translateX = -this.currentSlide * 16.666;
+                this.slidesContainer.style.transform = `translateX(${translateX}%)`;
+                
+                // Update indicators
+                this.indicators.forEach((indicator, index) => {
+                    indicator.classList.toggle('active', index === this.currentSlide);
+                });
+            }
+
+            goToSlide(slideIndex) {
+                if (this.isAnimating || slideIndex === this.currentSlide) return;
+                
+                this.isAnimating = true;
+                this.currentSlide = slideIndex;
+                this.updateSlidePosition();
+                
+                setTimeout(() => {
+                    this.isAnimating = false;
+                }, 600);
+            }
+
+            nextSlide() {
+                if (this.isAnimating) return;
+                
+                this.isAnimating = true;
+                this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+                this.updateSlidePosition();
+                
+                setTimeout(() => {
+                    this.isAnimating = false;
+                }, 600);
+            }
+
+            prevSlide() {
+                if (this.isAnimating) return;
+                
+                this.isAnimating = true;
+                this.currentSlide = this.currentSlide === 0 ? this.totalSlides - 1 : this.currentSlide - 1;
+                this.updateSlidePosition();
+                
+                setTimeout(() => {
+                    this.isAnimating = false;
+                }, 600);
+            }
+        }
+
+        // Initialize carousel when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new ManualCarousel();
+        });
+    </script>
+
+    <!-- Responsive Hamburger Menu Script -->
+    <script>
+        const hamburgerToggle = document.getElementById('hamburger-toggle');
+        const navLinks = document.getElementById('navLinks');
+        if (hamburgerToggle && navLinks) {
+            hamburgerToggle.addEventListener('change', function() {
+                navLinks.classList.toggle('nav-open', this.checked);
+            });
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburgerToggle.checked = false;
+                    navLinks.classList.remove('nav-open');
+                });
+            });
+        }
+    </script>
+    
+    </body>
+    </html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QFX Cinema - POKHARA TRADE MALL</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+   
+      <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="logo.jpg" alt="Pokhara Trade Mall Logo" class="logo-img">
+                <span class="company-name"></span>
+            </a>
+            <input type="checkbox" id="hamburger-toggle" class="hamburger-toggle" aria-label="Toggle navigation">
+            <label for="hamburger-toggle" class="hamburger" aria-controls="navLinks" aria-expanded="false" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="stores.html" class="nav-link">Stores</a></li>
+                <li><a href="cinema.html" class="nav-link active">Cinema</a></li>
+                <li><a href="entertainment.html" class="nav-link ">Entertainment</a></li>
+                <li><a href="advertisement.html" class="nav-link">Advertisement</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="cinema-loader" class="cinema-loader" role="status" aria-live="polite" aria-label="Loading cinema content">
+        <div class="cinema-loader-content">
+            <div class="cinema-loader-logo">
+                <span class="qfx-q">Q</span><span class="qfx-fx">FX</span>
+            </div>
+            <div class="cinema-loader-bar"></div>
+            <p class="cinema-loader-text">Loading amazing cinema experiences...</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Animated Background Container -->
+        <div class="cinema-bg-animation" id="cinemaBgAnimation">
+            <!-- Flying elements will be added by JavaScript -->
+        </div>
+
+        <!-- Hero Section with Prominent Book Now Button -->
+        <section class="cinema-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-left">
+                        <div class="qfx-logo-container">
+                            <div class="qfx-logo">
+                                <div class="qfx-logo-circle">
+                                    <span class="qfx-text">QFX</span>
+                                    <span class="cinemas-text">cinemas</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h1 class="cinema-title">Premium Movie Experience</h1>
+                        <p class="cinema-subtitle">Enjoy the latest blockbusters in comfort and style at Pokhara's premier cinema destination</p>
+                    </div>
+                    <div class="hero-right">
+                        <div class="booking-card">
+                            <div class="booking-header">
+                                <i class="fas fa-ticket-alt"></i>
+                                <h3>Book Your Tickets</h3>
+                            </div>
+                            <p>Reserve your seats now for the best movie experience</p>
+                            <div class="booking-buttons">
+                                <a href="https://www.qfxcinemas.com/" target="_blank" class="btn-book-primary">
+                                    <i class="fas fa-play-circle"></i>
+                                    Book Now
+                                </a>
+                                <a href="tel:+97761123456" class="btn-book-secondary">
+                                    <i class="fas fa-phone"></i>
+                                    Call: 061-123456
+                                </a>
+                            </div>
+                            <div class="quick-info">
+                                <div class="info-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>Shows: 10 AM - 10 PM</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>3rd Floor, Trade Mall</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="qfx-section">
+            <div class="container">
+                <div class="qfx-content">
+                    
+                    <!-- Features Section -->
+                    <div class="cinema-features-section">
+                        <h2>Why Choose QFX Cinemas?</h2>
+                        <div class="features-grid-enhanced">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-film"></i>
+                                </div>
+                                <h4>Latest Movies</h4>
+                                <p>Watch the newest blockbusters and indie films as soon as they release</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-chair"></i>
+                                </div>
+                                <h4>Luxury Seating</h4>
+                                <p>Reclining seats with premium comfort for the ultimate viewing experience</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-volume-up"></i>
+                                </div>
+                                <h4>Dolby Sound</h4>
+                                <p>Crystal clear audio and stunning visuals with state-of-the-art technology</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-snowflake"></i>
+                                </div>
+                                <h4>Climate Control</h4>
+                                <p>Perfect temperature maintained throughout your movie experience</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-hotdog"></i>
+                                </div>
+                                <h4>Gourmet Snacks</h4>
+                                <p>Fresh popcorn, beverages, and delicious treats available at our concession</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                                <h4>Easy Booking</h4>
+                                <p>Book tickets online or via phone with flexible payment options</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Floating Book Now Button for Mobile -->
+                    <div class="floating-book-btn">
+                        <a href="https://www.qfxcinemas.com/" target="_blank" class="btn-floating">
+                            <i class="fas fa-ticket-alt"></i>
+                            <span>Book Now</span>
+                        </a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h4>About POKHARA TRADE MALL</h4>
+                    <p>Nepal's premier shopping destination offering world-class retail, dining, and entertainment experiences in the heart of Pokhara.</p>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Lakeside, Pokhara, Nepal</p>
+                        <p><i class="fas fa-phone"></i> +977 61 123456</p>
+                        <p><i class="fas fa-envelope"></i> info@pokharatrade.com</p>
+                    </div>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="stores.html">Stores</a></li>
+                        <li><a href="cinema.html">Cinema</a></li>
+                        <li><a href="entertainment.html">Entertainment</a></li>
+                        <li><a href="advertisement.html">Advertisement</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section hours">
+                    <h4>Opening Hours</h4>
+                    <ul class="hours-list">
+                        <li><span>Monday - Friday:</span> 10:00 AM - 10:00 PM</li>
+                        <li><span>Saturday:</span> 10:00 AM - 11:00 PM</li>
+                        <li><span>Sunday:</span> 11:00 AM - 9:00 PM</li>
+                        <li><span>Food Court:</span> 10:00 AM - 11:00 PM</li>
+                        <li><span>QFX Cinema:</span> According to show timings</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 POKHARA TRADE MALL. All rights reserved. | Designed with <i class="fas fa-heart"></i> by Shirish</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

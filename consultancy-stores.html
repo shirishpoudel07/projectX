@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultancy Services - POKHARA TRADE MALL</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Main Navigation">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="logo.jpg" alt="Pokhara Trade Mall Logo" class="logo-img">
+                <span class="company-name"></span>
+            </a>
+            <input type="checkbox" id="hamburger-toggle" class="hamburger-toggle" aria-label="Toggle navigation">
+            <label for="hamburger-toggle" class="hamburger" aria-controls="navLinks" aria-expanded="false" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="stores.html" class="nav-link active">Stores</a></li>
+                <li><a href="cinema.html" class="nav-link">Cinema</a></li>
+                <li><a href="entertainment.html" class="nav-link">Entertainment</a></li>
+                <li><a href="advertisement.html" class="nav-link">Advertisement</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <div class="page-header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="header-text">
+                        <h1>Professional Consultancy Services</h1>
+                        <p>Expert guidance and support for your business and personal needs</p>
+                    </div>
+                    <div class="header-actions">
+                        <a href="stores.html" class="btn-explore">
+                            <i class="fas fa-arrow-left"></i>
+                            Back to All Stores
+                            <span class="arrow"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Consultancy Services Grid -->
+        <section class="stores-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>All Consultancy Services</h2>
+                    <p>Browse through our professional consultancy partners</p>
+                </div>
+
+                <div class="filters-container">
+                    <div class="filter-group">
+                        <label for="service-filter">Service Type:</label>
+                        <select id="service-filter" class="filter-select">
+                            <option value="all">All Services</option>
+                            <option value="business">Business Strategy</option>
+                            <option value="legal">Legal Advisory</option>
+                            <option value="financial">Financial Planning</option>
+                            <option value="marketing">Marketing & Branding</option>
+                            <option value="technology">Technology Solutions</option>
+                            <option value="real-estate">Real Estate</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="service-search">Search:</label>
+                        <input
+                            type="text"
+                            id="service-search"
+                            class="filter-input"
+                            placeholder="Search consultancy services..."
+                            aria-label="Search consultancy services"
+                        />
+                    </div>
+                </div>
+
+                <div class="stores-grid" id="storesGrid">
+                    <!-- Consultancy services will be populated by JavaScript -->
+                </div>
+                
+                <!-- Pagination -->
+                <div class="pagination-container" id="paginationContainer">
+                    <div class="pagination-info">
+                        <span id="paginationInfo">Showing 1-6 of 0 services</span>
+                    </div>
+                    <div class="pagination-controls">
+                        <button class="pagination-btn" id="prevBtn" disabled>
+                            <i class="fas fa-chevron-left"></i>
+                            Previous
+                        </button>
+                        <div class="pagination-numbers" id="paginationNumbers">
+                            <!-- Page numbers will be generated by JavaScript -->
+                        </div>
+                        <button class="pagination-btn" id="nextBtn">
+                            Next
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h4>About POKHARA TRADE MALL</h4>
+                    <p>Nepal's premier shopping destination offering world-class retail, dining, and entertainment experiences in the heart of Pokhara.</p>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Lakeside, Pokhara, Nepal</p>
+                        <p><i class="fas fa-phone"></i> +977 61 123456</p>
+                        <p><i class="fas fa-envelope"></i> info@pokharatrade.com</p>
+                    </div>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="stores.html">Stores</a></li>
+                        <li><a href="cinema.html">Cinema</a></li>
+                        <li><a href="entertainment.html">Entertainment</a></li>
+                        <li><a href="advertisement.html">Advertisement</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section hours">
+                    <h4>Opening Hours</h4>
+                    <ul class="hours-list">
+                        <li><span>Monday - Friday:</span> 10:00 AM - 10:00 PM</li>
+                        <li><span>Saturday:</span> 10:00 AM - 11:00 PM</li>
+                        <li><span>Sunday:</span> 11:00 AM - 9:00 PM</li>
+                        <li><span>Food Court:</span> 10:00 AM - 11:00 PM</li>
+                        <li><span>QFX Cinema:</span> According to show timings</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 POKHARA TRADE MALL. All rights reserved. | Designed with <i class="fas fa-heart"></i> by Shirish</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Category-specific initialization for Consultancy services
+        document.addEventListener('DOMContentLoaded', function() {
+            initConsultancyServices();
+        });
+
+        function initConsultancyServices() {
+            // Create consultancy services data
+            const consultancyServices = [
+                {
+                    id: 'cs1',
+                    name: 'Business Strategy Consulting',
+                    category: 'business',
+                    description: 'Strategic planning, market analysis, and business development consulting for startups and established companies.',
+                    floor: 'Ground Floor',
+                    location: 'Suite G-15',
+                    phone: '+977 61 123456',
+                    email: 'business@pokharatrade.com',
+                    hours: '9:00 AM - 6:00 PM',
+                    services: ['Market Research', 'Growth Strategy', 'Financial Planning', 'Business Development'],
+                    rating: 4.8,
+                    image: 'layout.jpg'
+                },
+                {
+                    id: 'cs2',
+                    name: 'Legal Advisory Services',
+                    category: 'legal',
+                    description: 'Comprehensive legal consultation covering business law, contracts, compliance, and regulatory matters.',
+                    floor: 'Ground Floor',
+                    location: 'Suite G-22',
+                    phone: '+977 61 123457',
+                    email: 'legal@pokharatrade.com',
+                    hours: '9:00 AM - 6:00 PM',
+                    services: ['Contract Review', 'Compliance', 'Business Law', 'Regulatory Affairs'],
+                    rating: 4.9,
+                    image: 'layout.jpg'
+                },
+                {
+                    id: 'cs3',
+                    name: 'Financial Planning & Advisory',
+                    category: 'financial',
+                    description: 'Personal and business financial planning, investment strategies, and wealth management consultation.',
+                    floor: 'First Floor',
+                    location: 'Suite F-08',
+                    phone: '+977 61 123458',
+                    email: 'finance@pokharatrade.com',
+                    hours: '9:00 AM - 6:00 PM',
+                    services: ['Investment Planning', 'Tax Planning', 'Retirement Planning', 'Wealth Management'],
+                    rating: 4.7,
+                    image: 'layout.jpg'
+                },
+                {
+                    id: 'cs4',
+                    name: 'Marketing & Branding Solutions',
+                    category: 'marketing',
+                    description: 'Digital marketing strategies, brand development, and promotional campaigns to grow your business.',
+                    floor: 'First Floor',
+                    location: 'Suite F-12',
+                    phone: '+977 61 123459',
+                    email: 'marketing@pokharatrade.com',
+                    hours: '9:00 AM - 6:00 PM',
+                    services: ['Digital Marketing', 'Brand Strategy', 'Social Media', 'Content Creation'],
+                    rating: 4.6,
+                    image: 'layout.jpg'
+                },
+                {
+                    id: 'cs5',
+                    name: 'Technology Solutions Consulting',
+                    category: 'technology',
+                    description: 'IT consulting, digital transformation, and technology implementation for modern business needs.',
+                    floor: 'Second Floor',
+                    location: 'Suite S-05',
+                    phone: '+977 61 123460',
+                    email: 'tech@pokharatrade.com',
+                    hours: '9:00 AM - 6:00 PM',
+                    services: ['Digital Transformation', 'IT Strategy', 'Software Solutions', 'Cloud Services'],
+                    rating: 4.8,
+                    image: 'layout.jpg'
+                },
+                {
+                    id: 'cs6',
+                    name: 'Real Estate Advisory',
+                    category: 'real-estate',
+                    description: 'Property investment guidance, market analysis, and real estate development consultation services.',
+                    floor: 'Second Floor',
+                    location: 'Suite S-18',
+                    phone: '+977 61 123461',
+                    email: 'realestate@pokharatrade.com',
+                    hours: '9:00 AM - 6:00 PM',
+                    services: ['Investment Advisory', 'Market Analysis', 'Development Planning', 'Property Management'],
+                    rating: 4.7,
+                    image: 'layout.jpg'
+                }
+            ];
+            
+            // Initialize pagination and rendering
+            currentStores = consultancyServices;
+            currentPage = 1;
+            renderStores(consultancyServices, 1);
+            
+            // Set up filters
+            const serviceFilter = document.getElementById('service-filter');
+            const searchInput = document.getElementById('service-search');
+            
+            if (serviceFilter) {
+                serviceFilter.addEventListener('change', filterConsultancyServices);
+            }
+            
+            if (searchInput) {
+                searchInput.addEventListener('input', filterConsultancyServices);
+            }
+        }
+
+        function filterConsultancyServices() {
+            const serviceFilter = document.getElementById('service-filter');
+            const searchInput = document.getElementById('service-search');
+            
+            if (!serviceFilter || !searchInput) return;
+            
+            const serviceValue = serviceFilter.value;
+            const searchValue = searchInput.value.toLowerCase();
+            
+            const consultancyServices = [
+                // ... same data as above
+                {
+                    id: 'cs1',
+                    name: 'Business Strategy Consulting',
+                    category: 'business',
+                    description: 'Strategic planning, market analysis, and business development consulting for startups and established companies.',
+                    floor: 'Ground Floor',
+                    location: 'Suite G-15',
+                    phone: '+977 61 123456',
+                    email: 'business@pokharatrade.com',
+                    hours: '9:00 AM - 6:00 PM',
+                    services: ['Market Research', 'Growth Strategy', 'Financial Planning', 'Business Development'],
+                    rating: 4.8,
+                    image: 'layout.jpg'
+                },
+                {
+                    id: 'cs2',
+                    name: 'Legal Advisory Services',
+                    category: 'legal',
+                    description: 'Comprehensive legal consultation covering business law, contracts, compliance, and regulatory matters.',
+                    floor: 'Ground Floor',
+                    location: 'Suite G-22',
+                    phone: '+977 61 123457',
+                    email: 'legal@pokharatrade.com',
+                    hours: '9:00 AM - 6:00 PM',
+                    services: ['Contract Review', 'Compliance', 'Business Law', 'Regulatory Affairs'],
+                    rating: 4.9,
+                    image: 'layout.jpg'
+                },
+                {
+                    id: 'cs3',
+                    name: 'Financial Planning & Advisory',
+                    category: 'financial',
+                    description: 'Personal and business financial planning, investment strategies, and wealth management consultation.',
+                    floor: 'First Floor',
+                    location: 'Suite F-08',
+                    phone: '+977 61 123458',
+                    email: 'finance@pokharatrade.com',
+                    hours: '9:00 AM - 6:00 PM',
+                    services: ['Investment Planning', 'Tax Planning', 'Retirement Planning', 'Wealth Management'],
+                    rating: 4.7,
+                    image: 'layout.jpg'
+                },
+                {
+                    id: 'cs4',
+                    name: 'Marketing & Branding Solutions',
+                    category: 'marketing',
+                    description: 'Digital marketing strategies, brand development, and promotional campaigns to grow your business.',
+                    floor: 'First Floor',
+                    location: 'Suite F-12',
+                    phone: '+977 61 123459',
+                    email: 'marketing@pokharatrade.com',
+                    hours: '9:00 AM - 6:00 PM',
+                    services: ['Digital Marketing', 'Brand Strategy', 'Social Media', 'Content Creation'],
+                    rating: 4.6,
+                    image: 'layout.jpg'
+                },
+                {
+                    id: 'cs5',
+                    name: 'Technology Solutions Consulting',
+                    category: 'technology',
+                    description: 'IT consulting, digital transformation, and technology implementation for modern business needs.',
+                    floor: 'Second Floor',
+                    location: 'Suite S-05',
+                    phone: '+977 61 123460',
+                    email: 'tech@pokharatrade.com',
+                    hours: '9:00 AM - 6:00 PM',
+                    services: ['Digital Transformation', 'IT Strategy', 'Software Solutions', 'Cloud Services'],
+                    rating: 4.8,
+                    image: 'layout.jpg'
+                },
+                {
+                    id: 'cs6',
+                    name: 'Real Estate Advisory',
+                    category: 'real-estate',
+                    description: 'Property investment guidance, market analysis, and real estate development consultation services.',
+                    floor: 'Second Floor',
+                    location: 'Suite S-18',
+                    phone: '+977 61 123461',
+                    email: 'realestate@pokharatrade.com',
+                    hours: '9:00 AM - 6:00 PM',
+                    services: ['Investment Advisory', 'Market Analysis', 'Development Planning', 'Property Management'],
+                    rating: 4.7,
+                    image: 'layout.jpg'
+                }
+            ];
+            
+            currentStores = consultancyServices.filter(service => {
+                const serviceMatch = serviceValue === 'all' || service.category === serviceValue;
+                const searchMatch = searchValue === '' || 
+                    service.name.toLowerCase().includes(searchValue) || 
+                    service.description.toLowerCase().includes(searchValue);
+                return serviceMatch && searchMatch;
+            });
+            
+            // Reset to first page when filtering
+            currentPage = 1;
+            renderStores(currentStores, currentPage);
+        }
+    </script>
+</body>
+</html>
